@@ -11,7 +11,6 @@ import {
   TableBody,
   Pagination,
   TableSortLabel,
-  Box,
   InputAdornment,
   IconButton,
   Card,
@@ -24,7 +23,6 @@ import {
   faUserCircle,
   faQuestionCircle,
   faExclamationCircle,
-  faSpinner,
   faWarning,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -68,7 +66,7 @@ const App = () => {
 
   useEffect(() => {
     dispatch(fetchPeople(searchTerm, currentPage));
-  }, [currentPage]);
+  }, [currentPage,dispatch]); //eslint-disable-line
 
   const handleRequestSort = (event, property, numeric) => {
     const isAsc = orderBy === property && order === 'asc';
@@ -210,7 +208,7 @@ const App = () => {
       setdata(sortedPeople);
       // Update the state with the sorted array
     }
-  }, [people, order, orderBy]);
+  }, [people, order, orderBy,numeric]);
   const handleClear = () => {
     setSearchTerm('');
     dispatch(fetchPeople(''));
@@ -345,7 +343,7 @@ const App = () => {
                       >
                         <TableCell style={{ padding: '10px' }}>
                           {
-                            <a href={person.url} target='_blank'>
+                            <a href={person.url} target='_blank' rel="noreferrer">
                               {person.name}
                             </a>
                           }
@@ -385,7 +383,7 @@ const App = () => {
                             >
                               {person.films?.map((val) => {
                                 return (
-                                  <a href={val.url} target='_blank'>
+                                  <a href={val.url} target='_blank' rel="noreferrer">
                                     {val.name}
                                   </a>
                                 );
@@ -406,7 +404,7 @@ const App = () => {
                             >
                               {person.species?.map((val) => {
                                 return (
-                                  <a href={val.url} target='_blank'>
+                                  <a href={val.url} target='_blank' rel="noreferrer">
                                     {renderIcon(val.name)}
                                   </a>
                                 );
@@ -427,7 +425,7 @@ const App = () => {
                             >
                               {person.vehicles?.map((val) => {
                                 return (
-                                  <a href={val.url} target='_blank'>
+                                  <a href={val.url} target='_blank' rel="noreferrer">
                                     {val.name}
                                   </a>
                                 );
@@ -448,7 +446,7 @@ const App = () => {
                             >
                               {person.starships?.map((val) => {
                                 return (
-                                  <a href={val.url} target='_blank'>
+                                  <a href={val.url} target='_blank' rel="noreferrer">
                                     {val.name}
                                   </a>
                                 );
