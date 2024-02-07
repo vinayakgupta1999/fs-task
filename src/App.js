@@ -380,11 +380,12 @@ const App = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 gap: '5px',
+                                 width:'200px'
                               }}
                             >
-                              {person.films?.map((val) => {
+                              {person.films?.map((val,filmKey) => {
                                 return (
-                                  <a href={val.url} target='_blank' rel="noreferrer">
+                                  <a href={val.url} target='_blank' rel="noreferrer" key={filmKey}>
                                     {val.name}
                                   </a>
                                 );
@@ -401,11 +402,12 @@ const App = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 gap: '5px',
+                                 width:'200px'
                               }}
                             >
-                              {person.species?.map((val) => {
+                              {person.species?.map((val,specieKey) => {
                                 return (
-                                  <a href={val.url} target='_blank' rel="noreferrer">
+                                  <a href={val.url} target='_blank' rel="noreferrer" key={specieKey}>
                                     {renderIcon(val.name)}
                                   </a>
                                 );
@@ -422,11 +424,12 @@ const App = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 gap: '5px',
+                                width:'200px'
                               }}
                             >
-                              {person.vehicles?.map((val) => {
+                              {person.vehicles?.map((val,vehicleKey) => {
                                 return (
-                                  <a href={val.url} target='_blank' rel="noreferrer">
+                                  <a href={val.url} target='_blank' rel="noreferrer" key={vehicleKey}>
                                     {val.name}
                                   </a>
                                 );
@@ -443,11 +446,12 @@ const App = () => {
                                 display: 'flex',
                                 flexDirection: 'column',
                                 gap: '5px',
+                                width:'200px'
                               }}
                             >
-                              {person.starships?.map((val) => {
+                              {person.starships?.map((val,starshipKey) => {
                                 return (
-                                  <a href={val.url} target='_blank' rel="noreferrer">
+                                  <a href={val.url} target='_blank' rel="noreferrer" key={starshipKey}>
                                     {val.name}
                                   </a>
                                 );
