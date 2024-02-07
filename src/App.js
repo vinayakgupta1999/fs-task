@@ -24,6 +24,7 @@ import {
   faQuestionCircle,
   faExclamationCircle,
   faWarning,
+  faMobileAndroid
 } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
@@ -48,7 +49,7 @@ const App = () => {
 
   const renderIcon = (species) => {
     if (species.toLowerCase() === 'droid') {
-      return <FontAwesomeIcon icon='fa-brands fa-android' />;
+      return <FontAwesomeIcon icon={faMobileAndroid} />;
     } else if (species.toLowerCase() === 'human') {
       return <FontAwesomeIcon icon={faUserCircle} />;
     } else {
